@@ -81,6 +81,8 @@ namespace AutoyaFramework.Connections.HTTP
                     }
                 }
 
+                // 2017.3系でcontent-lengthがつかないことによる暫定対応
+                request.chunkedTransfer = false;
                 var p = request.SendWebRequest();
 
                 while (!p.isDone)
